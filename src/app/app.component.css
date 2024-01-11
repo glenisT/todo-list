@@ -1,0 +1,22 @@
+.page-container {
+    height: 100vh;
+    background-image: url('../assets/images/table-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.todo-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    /* border: 1px solid red; */
+}
+
+.todo-list {
+    width: 25%;
+    height: 90%;
+
+    /* border: 1px solid green; */
+}
