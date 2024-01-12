@@ -4,4 +4,11 @@
     background-image: url('../../assets/images/paper.avif');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header {
+    font-size: 5vw;
+    text-align: center;
+    word-spacing: 5px;
 }
