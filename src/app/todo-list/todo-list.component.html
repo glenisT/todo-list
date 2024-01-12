@@ -1,3 +1,10 @@
 <div class="container">
+
     <h1 class="header">Todo List</h1>
+
+    <ul class="todo-list">
+        <li *ngFor="let item of todoList">
+          <app-todo [todoItem]="item" (remove)="removeItem($event)"></app-todo>
+        </li>
+    </ul>
 </div>
