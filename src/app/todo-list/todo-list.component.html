@@ -7,4 +7,8 @@
           <app-todo [todoItem]="item" (remove)="removeItem($event)"></app-todo>
         </li>
     </ul>
+
+    <div class="counter">
+      <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
+    </div>
 </div>

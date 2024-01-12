@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 const storageName = 'todo_list';
 
 const defaultList = [
-  { title: 'install NodeJS' },
-  { title: 'install Angular CLI' },
-  { title: 'create new app' },
-  { title: 'serve app' },
-  { title: 'develop app' },
-  { title: 'deploy app' },
+  { title: 'install NodeJS', checked: false },
+  { title: 'install Angular CLI', checked: false },
+  { title: 'create new app', checked: false },
+  { title: 'serve app', checked: false },
+  { title: 'develop app', checked: false },
+  { title: 'deploy app', checked: false },
 ];
 
 @Injectable()

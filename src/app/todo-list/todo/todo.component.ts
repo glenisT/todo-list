@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TodoListStorageService } from 'src/app/todo-list-storage.service';
+import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
   selector: 'app-todo',
@@ -11,8 +13,9 @@ export class TodoComponent implements OnInit {
   @Output() remove:EventEmitter<any> = new EventEmitter();
 
   isComplete: boolean = false;
+  todoListService: any;
 
-  constructor() { }
+  constructor(private storage:TodoListStorageService) { }
 
   ngOnInit() {
   }
@@ -22,6 +25,7 @@ export class TodoComponent implements OnInit {
   }
 
   completeItem() {
-    this.isComplete = !this.isComplete;
+    this.todoItem.checked = !this.todoItem.checked;
+    this.storage.put(this.todoItem, this.todoItem);
   }
 }

@@ -21,3 +21,10 @@
 .todo-add {
   margin-bottom: 20px;
 }
+
+.counter {
+  text-align: end;
+  padding-right: 3vw;
+  margin-top: 2.5vh;
+  font-size: larger;
+}

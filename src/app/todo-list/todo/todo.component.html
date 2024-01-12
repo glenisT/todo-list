@@ -2,9 +2,10 @@
     <input type="checkbox"
          class="todo-checkbox"
          (click)="completeItem()"
+         [checked]="todoItem.checked == true"
     >
 
-    <span class="todo-title" [ngClass]="{'todo-complete': isComplete}">
+    <span class="todo-title" [ngClass]="{'todo-complete': todoItem.checked == true}">
         {{ todoItem.title }}
     </span>
 
