@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo-list.component';
 import { CounterComponent } from './counter/counter.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 
 
 
@@ -10,7 +11,8 @@ import { CounterComponent } from './counter/counter.component';
   declarations: [
     TodoComponent,
     TodoListComponent,
-    CounterComponent
+    CounterComponent,
+    AddTodoComponent
   ],
   imports: [
     CommonModule

@@ -8,6 +8,7 @@
   </ul>
 
   <div class="counter">
+    <app-add-todo></app-add-todo>
     <button class="btn filter-btn" (click)="filterTasks()">{{!filtered ? 'Filter tasks' : 'Remove filter'}}</button>
     <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
   </div>
