@@ -28,6 +28,7 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
     this.filtered = false;
     this.todoList = this.todoListService.getTodoList();
+    this.updateTotalTodos();
     this.loadCounterFromLocalStorage();
     this.loadFilterStateFromLocalStorage();
     // Subscribe to the update event
