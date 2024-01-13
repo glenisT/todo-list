@@ -1,21 +1,35 @@
-import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TodoListService } from 'src/app/shared/todo-list.service';
 
 @Component({
-    selector: 'app-edit-todo',
-    templateUrl: './edit-todo.component.html',
-    styleUrls: ['./edit-todo.component.css']
+  selector: 'app-edit-todo',
+  templateUrl: './edit-todo.component.html',
+  styleUrls: ['./edit-todo.component.css']
 })
 export class EditTodoComponent implements OnInit {
-    todoId: string = ''; // Assuming your todo item has an id property
+  item: any = {};
+  todoId: string = '';
 
-    constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router, private todoService: TodoListService) {}
 
-    ngOnInit() {
-        // Fetch the todoId from the route parameters
-        this.route.params.subscribe(params => {
-            this.todoId = params['id'];
-            // Use this.todoId to fetch and display the corresponding todo item details
-        });
-    }
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.todoId = params['id'];
+      // Fetch and set the current todo item
+      this.item = this.todoService.getTodoById(this.todoId);
+      console.log(this.item);
+      
+    });
+  }
+
+  editTask() {
+    // Update the title property of the current todo item
+    this.todoService.editTitle(this.todoId, this.item.title);
+    this.router.navigate(['']);
+  }
+
+  cancel() {
+    this.router.navigate(['']);
+  }
 }

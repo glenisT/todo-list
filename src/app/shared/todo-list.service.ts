@@ -13,10 +13,18 @@ export class TodoListService {
     return this.storage.get();
   }
 
+  getTodoById(id: string) {
+    return this.storage.getById(id);
+  }
+
   addItem(item: any) {
     const updatedList = this.storage.post(item);
     this.todoUpdateService.triggerUpdate();
     return updatedList;
+  }
+
+  editTitle(id: any, changedTitle: any) {
+    this.storage.putTitle(id, changedTitle);
   }
 
   removeItem(item: any) {

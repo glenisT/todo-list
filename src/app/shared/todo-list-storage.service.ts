@@ -26,6 +26,15 @@ export class TodoListStorageService {
     return [...this.todoList];
   }
 
+  getById(id: string) {
+    for (let i = 0; i < this.todoList.length; i++) {
+      const element = this.todoList[i];
+      if (element.id == id) {
+        return element;
+      }
+    }
+  }
+
 //  // restore to default list
 //  restore() {
 //    if (this.backUpList.length > 0) {
@@ -44,6 +53,12 @@ export class TodoListStorageService {
   // update an item
   put(item: any, changes: any) {
     Object.assign(this.todoList[this.findItemIndex(item)], changes);
+    return this.update();
+  }
+
+  putTitle(id: any, changedTitle: any) {
+    const todoToUpdate = this.todoList[this.findItemIndex(this.getById(id))];
+    todoToUpdate.title = changedTitle;
     return this.update();
   }
 
