@@ -10,6 +10,7 @@ import { TodoListService } from 'src/app/shared/todo-list.service';
 export class EditTodoComponent implements OnInit {
   item: any = {};
   todoId: string = '';
+  error: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private todoService: TodoListService) {}
 
@@ -24,9 +25,13 @@ export class EditTodoComponent implements OnInit {
   }
 
   editTask() {
-    // Update the title property of the current todo item
-    this.todoService.editTitle(this.todoId, this.item.title);
-    this.router.navigate(['']);
+    if (this.item.title == null || this.item.title.trim() === '') {
+      this.error = true;
+    } else {
+      this.error = false;
+      this.todoService.editTitle(this.todoId, this.item.title);
+      this.router.navigate(['']);
+    }
   }
 
   cancel() {

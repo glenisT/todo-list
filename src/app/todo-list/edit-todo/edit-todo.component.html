@@ -4,9 +4,10 @@
           <h1 class="header">Edit Todo</h1>
           <div>
             <mat-form-field class="mat-form-field">
-              <input [placeholder]="item.title" [(ngModel)]="item.title"/>
+              <input id="input" [placeholder]="item.title" [(ngModel)]="item.title"/>
             </mat-form-field>
           </div>
+          <span *ngIf="error" style="color: rgb(236, 9, 9);">Please fill the form</span>
           <div class="buttons">
             <button class="btn" (click)="editTask()">Save</button>
             <button class="btn" style="margin-left: 5px;" (click)="cancel()">Cancel</button>
