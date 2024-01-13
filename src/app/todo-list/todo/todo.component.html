@@ -10,11 +10,13 @@
         {{ todoItem.title }}
     </span>
 
-    <button class="btn" (click)="remove.emit(todoItem)">
-      remove
-    </button>
-
-    <button class="btn" (click)="editItem()">
-      edit
-    </button>
+    <div class="buttons">
+      <button class="btn" (click)="remove.emit(todoItem)">
+        remove
+      </button>
+  
+      <button class="btn" (click)="editItem()">
+        edit
+      </button>
+    </div>
 </div>

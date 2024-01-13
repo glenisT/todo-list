@@ -11,12 +11,14 @@
     </li>
   </ul>
 
-  <div class="counter">
-    <div class="buttons">
-      <button class="btn" (click)="openAddTaskModal()">Add task</button>
-      <button class="btn" (click)="filterTasks()">{{!filtered ? 'Filter tasks' : 'Remove filter'}}</button>
+  <div class="footer">
+    <div class="counter">
+      <div class="buttons">
+        <button class="btn" (click)="openAddTaskModal()">Add task</button>
+        <button class="btn" (click)="filterTasks()">{{!filtered ? 'Filter tasks' : 'Remove filter'}}</button>
+      </div>
+      <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
     </div>
-    <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
   </div>
 
   <!-- <button style="display: block; padding: 20px;" (click)="restore()"></button> -->

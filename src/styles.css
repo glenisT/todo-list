@@ -27,10 +27,11 @@
     background: transparent;
     outline: none !important;
     border: 2px solid #161616;
-    border-radius: 10%;
+    border-radius: 0.5rem;
     padding: 2px;
     font-family: Shifty;
     font-size: calc(1rem + 4px);
+    width: 80px;
   }
   
   .btn:hover {

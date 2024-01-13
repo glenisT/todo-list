@@ -55,3 +55,10 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"]:hover {
   color: black;
 }
+
+.buttons {
+  margin-left: 50px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}

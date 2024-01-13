@@ -20,19 +20,27 @@
   margin-bottom: 20px;
 }
 
+.footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .counter {
+  width: 85%;
   position:static;
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
   text-align: end;
   margin-top: 2.5vh;
   font-size: larger;
 }
 
 .buttons {
-  width: 50%;
+  width: 40%;
   display: flex;
   justify-content: space-around;
+  margin-left: 25%;
 }
 
 .nails {
