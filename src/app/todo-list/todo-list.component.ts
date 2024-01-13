@@ -69,7 +69,7 @@ export class TodoListComponent implements OnInit {
   }
 
   removeItem(item: any) {
-    if (item.completed) {
+    if (item.checked) {
       this.completedCounter--; // Decrease completedCounter when a checked checkbox is deleted
     }
     this.todoList = this.todoListService.removeItem(item);
