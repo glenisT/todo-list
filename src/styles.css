@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-*{margin:0; padding:0; overflow-y: hidden; user-select: none;} 
+*{margin:0; padding:0;  user-select: none;} 
 
 @keyframes buttonHover {
   from {
@@ -48,7 +48,15 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Shifty}
+body { 
+  margin: 0;
+  font-family: Shifty;
+  height: max-content;
+  background-image: url('assets/images/table-background.jpg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center;
+}
 .custom-backdrop {
   background-image: url('assets/images/table-background.jpg'); 
 }

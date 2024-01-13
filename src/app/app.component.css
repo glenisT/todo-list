@@ -1,16 +1,12 @@
 .page-container {
-    height: 100vh;
-    background-image: url('../assets/images/table-background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    margin-top: 50px;
 }
 
 .todo-list-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: max-content;
 }
 
 .todo-list {
