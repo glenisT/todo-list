@@ -52,9 +52,10 @@ export class TodoListComponent implements OnInit {
     this.updateTotalTodos();
   }
 
-  //restore() {
-  //  this.storageService.restore();
-  //}
+  restore() {
+    this.storageService.restore();
+    this.updateTodoList();
+  }
 
   filterTasks() {
     this.filtered = !this.filtered;

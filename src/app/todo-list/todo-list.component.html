@@ -16,10 +16,10 @@
       <div class="buttons">
         <button class="btn" (click)="openAddTaskModal()">Add task</button>
         <button class="btn" (click)="filterTasks()">{{!filtered ? 'Filter tasks' : 'Remove filter'}}</button>
+        <button class="btn" (click)="restore()">Restore tasks</button>
       </div>
       <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
     </div>
   </div>
 
-  <!-- <button style="display: block; padding: 20px;" (click)="restore()"></button> -->
 </div>
