@@ -21,7 +21,8 @@ export class TodoListComponent implements OnInit {
   constructor(
     private todoListService: TodoListService,
     private dialog: MatDialog,
-    private todoUpdateService: TodoUpdateService
+    private todoUpdateService: TodoUpdateService,
+    private storageService: TodoListStorageService
   ) {}
 
   ngOnInit() {

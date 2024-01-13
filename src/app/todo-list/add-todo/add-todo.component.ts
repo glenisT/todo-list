@@ -22,7 +22,7 @@ export class AddTodoComponent implements OnInit {
   }
 
   saveTask(): void {
-    const item = { title: this.taskName, checked: false };
+    const item = {id: this.todoListService.getTodoList().length + 1, title: this.taskName, checked: false };
     this.todoListService.addItem(item);
     this.dialogRef.close();
   }
