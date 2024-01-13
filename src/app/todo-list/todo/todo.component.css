@@ -61,3 +61,21 @@ input[type="checkbox"]:hover {
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 600px) {
+  .todo-item {
+    font-size: 1.5rem;
+  }
+
+  .buttons {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    justify-content: end;
+    margin-left: 5px;
+    width: 100px;
+  }
+}

@@ -49,3 +49,21 @@
   margin: 0 20px 0 20px;
   padding-top: 10px;
 }
+
+@media (max-width: 600px) {
+  .counter {
+    width: 95%;
+    font-size: 15px;
+    text-align: start;
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .counter {
+    width: 100%;
+    font-size: 15px;
+    text-align: start;
+    align-items: center;
+  }
+}
