@@ -3,13 +3,14 @@
          class="todo-checkbox"
          (click)="completeItem()"
          [checked]="todoItem.checked == true"
+         (change)="onCheckboxChange($event)"
     >
 
     <span class="todo-title" [ngClass]="{'todo-complete': todoItem.checked == true}">
         {{ todoItem.title }}
     </span>
 
-    <button class="remove-btn" (click)="removeItem()">
+    <button class="remove-btn" (click)="remove.emit(todoItem)">
       remove
     </button>
 </div>

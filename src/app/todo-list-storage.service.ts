@@ -15,6 +15,7 @@ const defaultList = [
 export class TodoListStorageService {
 
   private todoList;
+  //private backUpList: any = [];
 
   constructor() {
     this.todoList = JSON.parse(localStorage.getItem(storageName)!) || defaultList;
@@ -24,6 +25,15 @@ export class TodoListStorageService {
   get() {
     return [...this.todoList];
   }
+
+//  // restore to default list
+//  restore() {
+//    if (this.backUpList.length > 0) {
+//      this.todoList.push([...this.backUpList]);
+//      this.update();
+//      window.location.reload();
+//    }
+//  }
 
   // add a new item
   post(item: any) {
@@ -40,6 +50,7 @@ export class TodoListStorageService {
   // remove an item
   destroy(item: any) {
     this.todoList.splice(this.findItemIndex(item), 1);
+    //this.backUpList.push(item);
     return this.update();
   }
 

@@ -1,14 +1,15 @@
 <div class="container">
+  <h1 class="header">Todo List</h1>
 
-    <h1 class="header">Todo List</h1>
+  <ul class="todo-list">
+    <li *ngFor="let item of todoList">
+      <app-todo [todoItem]="item" (remove)="removeItem($event)" (checkboxChange)="updateCompletedTodos($event)"></app-todo>
+    </li>
+  </ul>
 
-    <ul class="todo-list">
-        <li *ngFor="let item of todoList">
-          <app-todo [todoItem]="item" (remove)="removeItem($event)"></app-todo>
-        </li>
-    </ul>
+  <div class="counter">
+    <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
+  </div>
 
-    <div class="counter">
-      <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
-    </div>
+  <!-- <button style="display: block; padding: 20px;" (click)="restore()"></button> -->
 </div>

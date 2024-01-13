@@ -10,7 +10,8 @@ import { TodoListService } from 'src/app/todo-list.service';
 export class TodoComponent implements OnInit {
 
   @Input() todoItem: any;
-  @Output() remove:EventEmitter<any> = new EventEmitter();
+  @Output() remove = new EventEmitter<void>();
+  @Output() checkboxChange = new EventEmitter<boolean>();
 
   isComplete: boolean = false;
   todoListService: any;
@@ -20,12 +21,12 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
   }
 
-  removeItem() {
-    this.remove.emit(this.todoItem);
-  }
-
   completeItem() {
     this.todoItem.checked = !this.todoItem.checked;
     this.storage.put(this.todoItem, this.todoItem);
+  }
+
+  onCheckboxChange(event: any) {
+    this.checkboxChange.emit(event.target.checked);
   }
 }
