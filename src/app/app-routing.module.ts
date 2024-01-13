@@ -8,12 +8,11 @@ import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent, // Use the layout component for the default route
+    component: AppComponent,
     children: [
-        // Your existing routes or components for the default route
-        { path: '', component: LayoutComponent }, // Replace DefaultComponent with your existing default component
+        { path: '', component: LayoutComponent }
     ],
-},
+  },
   { path: 'edit/:id', component: EditTodoComponent }
 ];
 

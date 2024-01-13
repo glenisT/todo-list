@@ -17,7 +17,6 @@ export class EditTodoComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.todoId = params['id'];
-      // Fetch and set the current todo item
       this.item = this.todoService.getTodoById(this.todoId);
       console.log(this.item);
       

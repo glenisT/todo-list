@@ -35,6 +35,7 @@ export class TodoListStorageService {
     }
   }
 
+  // restore deleted tasks
   restore() {
     if (this.backUpList.length > 0) {
       this.todoList.push(...this.backUpList);
@@ -55,13 +56,14 @@ export class TodoListStorageService {
     return this.update();
   }
 
+  // simplified put method for editing the title
   putTitle(id: any, changedTitle: any) {
     const todoToUpdate = this.todoList[this.findItemIndex(this.getById(id))];
     todoToUpdate.title = changedTitle;
     return this.update();
   }
 
-  // remove an item
+  // remove an item and back it up for restoration
   destroy(item: any) {
     this.todoList.splice(this.findItemIndex(item), 1);
     this.backUpList.push(item);

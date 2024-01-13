@@ -31,7 +31,7 @@ export class TodoListComponent implements OnInit {
     this.updateTotalTodos();
     this.loadCounterFromLocalStorage();
     this.loadFilterStateFromLocalStorage();
-    // Subscribe to the update event
+    // Subscribe to the update event to trigger real time list update when new task is added
     this.todoUpdateService.update$.subscribe(() => {
       this.updateTodoList();
     });
@@ -65,7 +65,7 @@ export class TodoListComponent implements OnInit {
   addItem(title: any): void {
     this.todoList = this.todoListService.addItem({ title });
     this.updateTotalTodos();
-    this.saveCounterToLocalStorage(); // Save the counter to localStorage when adding an item
+    this.saveCounterToLocalStorage();
   }
 
   removeItem(item: any) {
@@ -106,11 +106,10 @@ export class TodoListComponent implements OnInit {
   loadFilterStateFromLocalStorage() {
     const storedFilterState = localStorage.getItem('filter');
     if (storedFilterState !== null) {
-      // Converting the stored string back to a boolean
+      // converting the stored string back to a boolean
       this.filtered = storedFilterState === 'true';
     } else {
-      // Handling the case where the value is not found in localStorage
-      this.filtered = false; // or any default value you prefer
+      this.filtered = false;
     }
   }
 }

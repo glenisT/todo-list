@@ -30,8 +30,8 @@ input {
     background-color: transparent;
     outline: none;
     padding-bottom: 5px;
-  }
+}
   
-  input::placeholder {
-    color: #3b3b3b;
-  }
+input::placeholder {
+  color: #3b3b3b;
+}

@@ -29,8 +29,6 @@ export class TodoComponent implements OnInit {
   }
 
   editItem() {
-    // Assuming you have a route named 'edit' defined in your router configuration
-    // You can replace 'edit' with the actual route path where you want to navigate for editing.
     this.router.navigate(['/edit', this.todoItem.id]);
 }
 }
