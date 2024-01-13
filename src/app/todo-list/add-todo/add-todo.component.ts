@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { TodoListService } from 'src/app/todo-list.service';
+import { TodoListService } from 'src/app/shared/todo-list.service';
 
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.css']
+  styleUrls: ['./add-todo.component.css'],
 })
 export class AddTodoComponent implements OnInit {
   taskName: string = '';
 
-  constructor(public dialogRef: MatDialogRef<AddTodoComponent>,private todoListService: TodoListService) {}
+  constructor(
+    public dialogRef: MatDialogRef<AddTodoComponent>,
+    private todoListService: TodoListService
+  ) {}
 
   ngOnInit(): void {}
 

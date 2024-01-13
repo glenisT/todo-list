@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoListService } from '../todo-list.service';
-import { TodoListStorageService } from '../todo-list-storage.service';
+import { TodoListService } from '../shared/todo-list.service';
+import { TodoListStorageService } from '../shared/todo-list-storage.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddTodoComponent } from './add-todo/add-todo.component';
+import { TodoUpdateService } from '../shared/todo-update-service.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
 })
-
 export class TodoListComponent implements OnInit {
   title = 'todo';
   todoList: any;
@@ -18,23 +18,36 @@ export class TodoListComponent implements OnInit {
 
   filtered: boolean = false;
 
-  constructor(private todoListService: TodoListService, private storageService: TodoListStorageService, private dialog: MatDialog) {}
+  constructor(
+    private todoListService: TodoListService,
+    private dialog: MatDialog,
+    private todoUpdateService: TodoUpdateService
+  ) {}
 
   ngOnInit() {
     this.filtered = false;
     this.todoList = this.todoListService.getTodoList();
-    this.updateTotalTodos();
-    this.loadCounterFromLocalStorage(); // Load the counter from localStorage on component initialization
-    this.loadFilterStateFromLocalStorage()
+    this.loadCounterFromLocalStorage();
+    this.loadFilterStateFromLocalStorage();
+    // Subscribe to the update event
+    this.todoUpdateService.update$.subscribe(() => {
+      this.updateTodoList();
+    });
   }
 
   openAddTaskModal(): void {
     const dialogRef = this.dialog.open(AddTodoComponent, {
-      panelClass: 'custom-dialog-container'
+      panelClass: 'custom-dialog-container',
     });
-    dialogRef.afterClosed().subscribe((result) => {
+
+    dialogRef.afterClosed().subscribe(() => {
       console.log('The dialog was closed');
     });
+  }
+
+  private updateTodoList() {
+    this.todoList = this.todoListService.getTodoList();
+    this.updateTotalTodos();
   }
 
   //restore() {

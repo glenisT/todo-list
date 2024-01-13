@@ -4,21 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListModule } from './todo-list/todo-list.module';
-import { TodoListService } from './todo-list.service';
-import { TodoListStorageService } from './todo-list-storage.service';
+import { TodoListService } from './shared/todo-list.service';
+import { TodoListStorageService } from './shared/todo-list-storage.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TodoListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [TodoListService, TodoListStorageService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
