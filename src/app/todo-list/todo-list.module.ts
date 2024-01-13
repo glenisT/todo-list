@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { TodoUpdateService } from '../shared/todo-update-service.service';
+import { EditTodoComponent } from './edit-todo/edit-todo.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TodoUpdateService } from '../shared/todo-update-service.service';
     TodoListComponent,
     CounterComponent,
     AddTodoComponent,
+    EditTodoComponent,
   ],
   imports: [
     CommonModule,

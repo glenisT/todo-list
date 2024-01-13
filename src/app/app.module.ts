@@ -7,9 +7,10 @@ import { TodoListModule } from './todo-list/todo-list.module';
 import { TodoListService } from './shared/todo-list.service';
 import { TodoListStorageService } from './shared/todo-list-storage.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LayoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
