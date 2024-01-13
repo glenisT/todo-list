@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoListStorageService } from 'src/app/todo-list-storage.service';
-import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
   selector: 'app-todo',

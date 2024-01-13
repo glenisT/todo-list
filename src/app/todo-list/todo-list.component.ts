@@ -14,17 +14,26 @@ export class TodoListComponent implements OnInit {
   totalTodos: number = 0;
   completedCounter: number = 0;
 
+  filtered: boolean = false;
+
   constructor(private todoListService: TodoListService, private storageService: TodoListStorageService) {}
 
   ngOnInit() {
+    this.filtered = false;
     this.todoList = this.todoListService.getTodoList();
     this.updateTotalTodos();
     this.loadCounterFromLocalStorage(); // Load the counter from localStorage on component initialization
+    this.loadFilterStateFromLocalStorage()
   }
 
   //restore() {
   //  this.storageService.restore();
   //}
+
+  filterTasks() {
+    this.filtered = !this.filtered;
+    this.saveFilterStateToLocalStorage();
+  }
 
   addItem(title: any): void {
     this.todoList = this.todoListService.addItem({ title });
@@ -56,10 +65,25 @@ export class TodoListComponent implements OnInit {
     localStorage.setItem('completedCounter', this.completedCounter.toString());
   }
 
+  saveFilterStateToLocalStorage() {
+    localStorage.setItem('filter', this.filtered.toString());
+  }
+
   loadCounterFromLocalStorage() {
     const storedCounter = localStorage.getItem('completedCounter');
     if (storedCounter !== null) {
       this.completedCounter = +storedCounter;
+    }
+  }
+
+  loadFilterStateFromLocalStorage() {
+    const storedFilterState = localStorage.getItem('filter');
+    if (storedFilterState !== null) {
+      // Converting the stored string back to a boolean
+      this.filtered = storedFilterState === 'true';
+    } else {
+      // Handling the case where the value is not found in localStorage
+      this.filtered = false; // or any default value you prefer
     }
   }
 }

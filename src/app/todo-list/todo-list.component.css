@@ -9,13 +9,13 @@
 }
 
 .header {
-    font-size: 5vw;
+    font-size: 5rem;
     text-align: center;
     word-spacing: 5px;
 }
 
 .todo-list {
-    margin-top: 1vh;
+  padding-top: 1vh;
 }
 
 .todo-add {
@@ -23,8 +23,15 @@
 }
 
 .counter {
+  position:static;
+  display: flex;
+  justify-content: space-between;
   text-align: end;
   padding-right: 3vw;
   margin-top: 2.5vh;
   font-size: larger;
+}
+
+.filter-btn {
+  margin-left: 50%;
 }

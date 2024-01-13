@@ -3,11 +3,12 @@
 
   <ul class="todo-list">
     <li *ngFor="let item of todoList">
-      <app-todo [todoItem]="item" (remove)="removeItem($event)" (checkboxChange)="updateCompletedTodos($event)"></app-todo>
+      <app-todo *ngIf="!filtered || !item.checked" [todoItem]="item" (remove)="removeItem($event)" (checkboxChange)="updateCompletedTodos($event)"></app-todo>
     </li>
   </ul>
 
   <div class="counter">
+    <button class="btn filter-btn" (click)="filterTasks()">{{!filtered ? 'Filter tasks' : 'Remove filter'}}</button>
     <app-counter [totalTodos]="totalTodos" [completedTodos]="completedCounter"></app-counter>
   </div>
 

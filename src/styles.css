@@ -1,6 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 *{margin:0; padding:0; overflow-y: hidden; user-select: none;} 
 
+
+.btn {
+    background: transparent;
+    outline: none !important;
+    border: 2px solid #161616;
+    border-radius: 10%;
+    padding: 2px;
+    font-family: Shifty;
+    font-size: calc(1rem + 4px);
+  }
+  
+  .btn:hover {
+    background: #161616;
+    color: rgb(212, 212, 212);
+    cursor: pointer;
+  }
+  
+  .btn:active {
+    background: #2c2c2c;
+    border-color: #2c2c2c;
+  }
+
 @font-face {
     font-family: Shifty;
     src: url('assets/fonts/ShiftyNotesRegular.ttf');
