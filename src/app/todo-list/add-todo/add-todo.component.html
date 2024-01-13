@@ -1,1 +1,14 @@
-<p>add-todo works!</p>
+<div class="container">
+    <div class="content">
+      <h2 class="header">Add Todo</h2>
+      <div>
+        <mat-form-field class="mat-form-field">
+          <input placeholder="New todo" />
+        </mat-form-field>
+      </div>
+      <div class="buttons">
+        <button class="btn" (click)="saveTask()">Save</button>
+        <button class="btn" style="margin-left: 5px;" (click)="close()">Cancel</button>
+      </div>
+    </div>
+</div>

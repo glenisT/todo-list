@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TodoListModule } from './todo-list/todo-list.module';
 import { TodoListService } from './todo-list.service';
 import { TodoListStorageService } from './todo-list-storage.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TodoListStorageService } from './todo-list-storage.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TodoListModule
+    TodoListModule,
+    BrowserAnimationsModule
   ],
   providers: [TodoListService, TodoListStorageService],
   bootstrap: [AppComponent]

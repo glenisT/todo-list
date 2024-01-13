@@ -1,0 +1,37 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/images/paper.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    word-spacing: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    font-size: large;
+    font-family: Shifty;
+    border: none;
+    border-bottom: 1px solid #161616; /* Set the color of the bottom border */
+    background-color: transparent; /* Set the background color to be transparent */
+    outline: none; /* Remove the default input focus outline */
+    padding-bottom: 5px; /* Remove any default padding */
+  }
+  
+  /* Optionally, you can style the placeholder text color */
+  input::placeholder {
+    color: #3b3b3b; /* Set the placeholder text color */
+  }

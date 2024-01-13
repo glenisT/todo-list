@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoListService } from '../todo-list.service';
 import { TodoListStorageService } from '../todo-list-storage.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -16,7 +18,7 @@ export class TodoListComponent implements OnInit {
 
   filtered: boolean = false;
 
-  constructor(private todoListService: TodoListService, private storageService: TodoListStorageService) {}
+  constructor(private todoListService: TodoListService, private storageService: TodoListStorageService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.filtered = false;
@@ -24,6 +26,17 @@ export class TodoListComponent implements OnInit {
     this.updateTotalTodos();
     this.loadCounterFromLocalStorage(); // Load the counter from localStorage on component initialization
     this.loadFilterStateFromLocalStorage()
+  }
+
+  openAddTaskModal(): void {
+    const dialogRef = this.dialog.open(AddTodoComponent, {
+      panelClass: 'custom-dialog-container'
+    });
+
+    // Handle the result when the modal is closed
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
 
   //restore() {

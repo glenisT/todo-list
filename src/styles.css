@@ -46,3 +46,20 @@
     font-family: Shifty;
     src: url('assets/fonts/ShiftyNotesRegular.ttf');
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Shifty}
+.custom-backdrop {
+  background-image: url('assets/images/table-background.jpg'); 
+}
+.custom-dialog-container .mat-dialog-container {
+  width: 400px;
+  height: 170px;
+  box-sizing: border-box;
+  padding: 0px !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  color: inherit;
+  border: 3px solid #161616;
+  border-radius: 15px;
+}
