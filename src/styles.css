@@ -1,6 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 *{margin:0; padding:0; overflow-y: hidden; user-select: none;} 
 
+@keyframes buttonHover {
+  from {
+    background: transparent;
+    color: #161616;
+  }
+  to {
+    background: #161616;
+    color: rgb(212, 212, 212);
+  }
+}
+
+@keyframes buttonActive {
+  from {
+    background: #161616;
+    color: rgb(212, 212, 212);
+  }
+  to {
+    background: #2c2c2c;
+    border-color: #2c2c2c;
+  }
+}
 
 .btn {
     background: transparent;
@@ -13,14 +34,12 @@
   }
   
   .btn:hover {
-    background: #161616;
-    color: rgb(212, 212, 212);
     cursor: pointer;
+    animation: buttonHover 0.25s 1 forwards;
   }
   
   .btn:active {
-    background: #2c2c2c;
-    border-color: #2c2c2c;
+    animation: buttonActive 0.12s 1 forwards;
   }
 
 @font-face {

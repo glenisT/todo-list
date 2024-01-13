@@ -43,6 +43,7 @@ input[type="checkbox"]::before {
   width: 1.4rem;
   height: 1.4rem;
   transform: scale(0);
+  transition: transform 0.25s;
   clip-path: polygon(0% 70%, 0% 46.5%, 26.12% 70%, 100% 7.5%, 99.75% 32.55%, 26.12% 92.41%);
   background-color: #161616;
 }
