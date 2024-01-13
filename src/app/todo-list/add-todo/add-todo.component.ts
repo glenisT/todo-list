@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TodoListService } from 'src/app/todo-list.service';
 
 @Component({
   selector: 'app-add-todo',
@@ -9,7 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class AddTodoComponent implements OnInit {
   taskName: string = '';
 
-  constructor(public dialogRef: MatDialogRef<AddTodoComponent>) {}
+  constructor(public dialogRef: MatDialogRef<AddTodoComponent>,private todoListService: TodoListService) {}
 
   ngOnInit(): void {}
 
@@ -18,8 +19,8 @@ export class AddTodoComponent implements OnInit {
   }
 
   saveTask(): void {
-    // Add your logic to save the task
-    // You can emit an event or call a service to add the task to your todoList
+    const item = { title: this.taskName, checked: false };
+    this.todoListService.addItem(item);
     this.dialogRef.close();
   }
 }

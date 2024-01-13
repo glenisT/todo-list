@@ -16,6 +16,7 @@
 
 .todo-list {
   padding-top: 1vh;
+  list-style-type: none;
 }
 
 .todo-add {
