@@ -32,8 +32,6 @@ export class TodoListComponent implements OnInit {
     const dialogRef = this.dialog.open(AddTodoComponent, {
       panelClass: 'custom-dialog-container'
     });
-
-    // Handle the result when the modal is closed
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });
