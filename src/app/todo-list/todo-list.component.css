@@ -25,13 +25,14 @@
 .counter {
   position:static;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   text-align: end;
-  padding-right: 3vw;
   margin-top: 2.5vh;
   font-size: larger;
 }
 
-.filter-btn {
-  margin-left: 50%;
+.buttons {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
 }
